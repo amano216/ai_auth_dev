@@ -29,17 +29,10 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+          check-latest: true
 
-      - name: Install dependencies (prefer ci)
-        id: deps
-        run: |
-          if [ -f package-lock.json ]; then
-            echo "package-lock.json found. Running npm ci..."
-            npm ci || (echo "npm ci failed. Falling back to npm install..." && npm install)
-          else
-            echo "package-lock.json not found. Running npm install..."
-            npm install
-          fi
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
 
       - name: Build
         run: npm run build
