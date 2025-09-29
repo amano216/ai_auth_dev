@@ -1,0 +1,5 @@
+{
+  "name": "Home-Visit Nursing Document AI Assistant",
+  "description": "An application to streamline the creation of home-visit nursing documents such as care plans, reports, and summaries. It features a centralized patient management system with search functionality, designed as an MVP for future AI-powered document generation.",
+  "requestFramePermissions": []
+}
