@@ -31,7 +31,18 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/ai_auth_dev/assets/index-BNVsRnoF.js"></script>
+    <script>
+      // Detect GitHub Pages project site
+      window.__isGH = location.hostname.endsWith('github.io') && location.pathname.startsWith('/ai_auth_dev');
+    </script>
+    <script type="module">
+      // On GitHub Pages (branch-served), load built asset directly; otherwise load dev entry
+      if (window.__isGH) {
+        import('/ai_auth_dev/assets/index-BNVsRnoF.js');
+      } else {
+        import('/index.tsx');
+      }
+    </script>
 </head>
   <body class="bg-slate-50">
     <div id="root"></div>
